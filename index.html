@@ -28,6 +28,7 @@
     var wins = 0;
     var losses = 0;
     var guessLeft = 10;
+    var guessTotal = [];
 
     //create variables to hold the values for the HTML elements to be displayed
     var instructionsText = document.getElementById("instructions-text");
@@ -41,7 +42,8 @@
     
     document.onkeyup = function(event) {
         var userGuess = event.key;
-        console.log(userGuess);
+        var event = guessTotal.push(event)
+        console.log(event);
         //computer selects a letter from the array randomly based on the length of the array.
         var compLetter = compChoice[Math.floor(Math.random() * compChoice.length)];
     
@@ -52,6 +54,8 @@
         guessLeft--;
         losses++;
     }
+    if (losses >= 10)
+    alert("Game Over     Reload Page to Play")
     //hides the instructions
     // instructionsText.textContent = "";
 
@@ -59,11 +63,11 @@
     guessesLeft.textContent = "Guesses left: " + guessLeft;
     winsText.textContent = "Wins: " + wins;
     lossesText.textContent = "Losses: " + losses;
-
-
-
-
 }
+
+
+
+
 
     
     
