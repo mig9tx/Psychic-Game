@@ -1,0 +1,48 @@
+html {
+    font-size: 1rem;
+    margin: 0 auto 0 auto;
+  }
+  
+  @include media-breakpoint-up(sm) {
+    html {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @include media-breakpoint-up(md) {
+    html {
+      font-size: 1.4rem;
+    }
+  }
+  
+  @include media-breakpoint-up(lg) {
+    html {
+      font-size: 1.6rem;
+    }
+  }
+
+.jumbotron {
+    background-color: black;
+    text-align: center;
+}
+
+.display-4 {
+    font-family: 'Ewert', cursive; 
+    color: beige;
+}
+
+body {
+    margin-left: 30 px;
+    /* text-align: center; */
+    background-image: url(../images/pexels-photo-830730.jpeg);
+    color:whitesmoke;
+    
+
+}
+.lead{
+    color:beige;
+}
+
+p {
+   margin-left: 30px; 
+}
