@@ -18,9 +18,9 @@ var guessText = document.getElementById("guess-text");
 
 document.onkeyup = function (event) {
     var userGuess = event.key;
-    guessTotal = guessTotal + userGuess;
+    guessTotal = guessTotal + userGuess + ", ";
     // var event = guessTotal.push(event)
-    console.log(event);
+    console.log(guessTotal);
     //computer selects a letter from the array randomly based on the length of the array.
     var compLetter = compChoice[Math.floor(Math.random() * compChoice.length)];
 
@@ -28,12 +28,14 @@ document.onkeyup = function (event) {
     if (userGuess === compLetter){
         wins++;
         guessLeft=10;
+        guessTotal = "";
     }else if(userGuess !== compLetter){
         guessLeft--;
         // losses++;
     }if (guessLeft <= 0){
         losses++;
         guessLeft = 10;
+        guessTotal = "";
 }
 
 
@@ -42,7 +44,7 @@ document.onkeyup = function (event) {
 // instructionsText.textContent = "";
 
 //displays variable values to the browser window along with text
-document.getElementById("guess-text").innerHTML = "You chose: " + userGuess;
+document.getElementById("guess-text").innerHTML = "You chose: " + guessTotal;
 document.getElementById("guessleft-text").innerHTML = "Guesses left: " + guessLeft;
 document.getElementById("wins-text").innerHTML = "Wins: " + wins;
 document.getElementById("losses-text").innerHTML = "Losses: " + losses;
